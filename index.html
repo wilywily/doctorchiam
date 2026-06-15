@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李俊嘉 醫師 | 整形外科</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a4a;
+            --gold: #b8956b;
+            --gold-light: #d4b896;
+            --bg: #f8f6f3;
+            --white: #ffffff;
+            --text: #2d2d2d;
+            --text-light: #666666;
+            --border: #e8e2dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 80px);
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a3a4a 0%, #2d6b7a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-image .placeholder-text {
+            position: absolute;
+            color: rgba(255,255,255,0.15);
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            font-weight: 700;
+            pointer-events: none;
+        }
+
+        .hero-image .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(to top, rgba(248,246,243,0.6), transparent);
+        }
+
+        .hero-content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-content .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-content .title-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .hero-content .position {
+            font-size: 18px;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .en-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-header .line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto;
+        }
+
+        /* Specialty & Experience Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+        }
+
+        .info-card .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .info-card .card-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .info-card h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.6;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .info-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            padding: 80px;
+            text-align: center;
+            margin: 60px auto;
+            border-radius: 24px;
+            max-width: 1200px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Noto Serif TC', serif;
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 149, 107, 0.3);
+        }
+
+        /* Verify Link */
+        .verify-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 12px 24px;
+            background: rgba(184, 149, 107, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--gold);
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .verify-link:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .verify-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.6);
+            padding: 60px 80px 30px;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        footer .footer-info {
+            font-size: 13px;
+            line-height: 2.2;
+            margin-bottom: 32px;
+        }
+
+        footer .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 24px;
+        }
+
+        footer .copyright {
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                min-height: 400px;
+            }
+
+            .hero-content {
+                padding: 40px 24px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .section {
+                padding: 60px 24px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .info-card {
+                padding: 32px 24px;
+            }
+
+            .cta-section {
+                padding: 48px 24px;
+                margin: 40px 16px;
+                border-radius: 16px;
+            }
+
+            footer {
+                padding: 40px 24px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">AESTHETIC<span>.</span></a>
+        <nav>
+            <a href="#">關於我們</a>
+            <a href="#">醫療團隊</a>
+            <a href="#">診療項目</a>
+            <a href="#">案例分享</a>
+            <a href="#">聯絡我們</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <!--
+                請將李俊嘉醫師的照片放在同一資料夾，命名為 doctor.jpg
+                然後將下方 src 改為 "doctor.jpg"
+            -->
+            <img src="doctor.jpg" alt="李俊嘉醫師"
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+            <span class="placeholder-text" style="display:none;">Dr. Lee</span>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <p class="subtitle">Plastic Surgeon</p>
+            <h1>李俊嘉</h1>
+            <div class="title-line"></div>
+            <p class="position">整形外科 主治醫師</p>
+            <p class="position">亞東紀念醫院</p>
+        </div>
+    </section>
+
+    <!-- Specialty Section -->
+    <section class="section">
+        <div class="section-header">
+            <p class="en-title">Expertise & Background</p>
+            <h2>專長與經歷</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="info-grid">
+            <!-- 看診項目 / 專長 -->
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3>看診項目</h3>
+                <ul>
+                    <li>顏面骨骼手術（正顎手術、削骨手術）</li>
+                    <li>眼整形手術（雙眼皮、眼袋、眼瞼下垂）</li>
+                    <li>鼻整形手術（隆鼻、鼻雕）</li>
+                    <li>拉皮手術（內視鏡前額拉皮、中下臉拉皮）</li>
+                    <li>胸部整形手術（隆乳、縮乳、乳房重建）</li>
+                    <li>體雕手術（抽脂、腹部整形）</li>
+                    <li>微整形注射（肉毒桿菌、玻尿酸、埋線）</li>
+                    <li>疤痕修整、燒傷重建</li>
+                    <li>手外科、顯微重建手術</li>
+                </ul>
+            </div>
+
+            <!-- 學經歷 -->
+            <div class="info-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                </div>
+                <h3>學經歷</h3>
+                <ul>
+                    <li>亞東紀念醫院整形外科主治醫師</li>
+                    <li>台灣整形外科醫學會專科醫師</li>
+                    <li>台灣手外科醫學會專科醫師</li>
+                    <li>台灣外科醫學會專科醫師</li>
+                    <li>台灣美容外科醫學會會員</li>
+                    <li>國立台灣大學醫學院附設醫院整形外科訓練</li>
+                </ul>
+
+                <a href="https://ma.mohw.gov.tw/Accessibility/DOCSearch/MASearchDOC" target="_blank" class="verify-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                    衛福部醫事人員查詢系統
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>預約諮詢</h2>
+        <p>歡迎透過亞東紀念醫院網路掛號系統預約李俊嘉醫師門診</p>
+        <a href="https://www.femh.org.tw/webregs/start.aspx" target="_blank" class="cta-btn">立即預約掛號</a>
+    </div>
+
+    <!-- Case Section -->
+    <section class="section">
+        <div class="section-header">
+            <p class="en-title">Case</p>
+            <h2>案例分享</h2>
+            <div class="line"></div>
+        </div>
+        <p style="text-align:center; color: var(--text-light); font-size: 15px;">即將更新，敬請期待</p>
+    </section>
+
+    <!-- Column Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section-header">
+            <p class="en-title">Column</p>
+            <h2>精選文章</h2>
+            <div class="line"></div>
+        </div>
+        <p style="text-align:center; color: var(--text-light); font-size: 15px;">即將更新，敬請期待</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">亞東紀念醫院 整形外科</div>
+        <div class="footer-info">
+            <p>地址：220 新北市板橋區南雅南路二段21號</p>
+            <p>總機：(02) 8966-7000</p>
+            <p>預約掛號專線：(02) 8966-9000</p>
+        </div>
+        <div class="divider"></div>
+        <p class="copyright">Copyright &copy; 2026 Far Eastern Memorial Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
